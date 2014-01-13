@@ -1,5 +1,5 @@
 import unittest
-from source.python.board.little_board import LittleBoard
+from board.little_board import LittleBoard
 
 
 class Test(unittest.TestCase):
