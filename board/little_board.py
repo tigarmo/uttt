@@ -13,7 +13,7 @@ class LittleBoard(object):
         self._board = [ CreateEmptyRow() for _ in range(3)]
 
     def GetStatus(self):
-        for p in range(2):
+        for p in [1,2]:
             # first check for a row-win for player p
             for r in range(3):
                 if self._board[r][0] == self._board[r][1] == self._board[r][2] == p:
@@ -26,7 +26,7 @@ class LittleBoard(object):
             if self._board[0][0] == self._board[1][1] == self._board[2][2] == p or self._board[2][0] == self._board[1][1] == self._board[0][2] == p:
                 return p
 
-        # if none of the above, check for a open slots
+        # if none of the above, check for open slots
         for r in range(3):
             for r in range(3):
                 if self._board[r][c] == 0:
