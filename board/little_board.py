@@ -28,7 +28,7 @@ class LittleBoard(object):
 
         # if none of the above, check for open slots
         for r in range(3):
-            for r in range(3):
+            for c in range(3):
                 if self._board[r][c] == 0:
                     return 0
 
