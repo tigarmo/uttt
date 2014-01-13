@@ -13,4 +13,24 @@ class LittleBoard(object):
         self._board = [ CreateEmptyRow() for _ in range(3)]
 
     def GetStatus(self):
-        pass
+        for p in range(2):
+            # first check for a row-win for player p
+            for r in range(3):
+                if self._board[r][0] == self._board[r][1] == self._board[r][2] == p:
+                    return p
+            # then check for a column-win for player p
+            for c in range(3):
+                if self._board[0][c] == self._board[1][c] == self._board[1][c] == p:
+                    return p
+            # finally, check for a diagonal-win for player p
+            if self._board[0][0] == self._board[1][1] == self._board[2][2] == p or self._board[2][0] == self._board[1][1] == self._board[0][2] == p:
+                return p
+
+        # if none of the above, check for a open slots
+        for r in range(3):
+            for r in range(3):
+                if self._board[r][c] == 0:
+                    return 0
+
+        # none of the above, so it's a tie
+        return 3
