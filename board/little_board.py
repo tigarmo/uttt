@@ -42,5 +42,12 @@ class LittleBoard(object):
             print("Move not allowed")
 
     def PrintBoard(self):
+        def OmitZero(s):
+            if s == 0:
+                return " "
+            else:
+                return str(s)
         for r in range(3):
-            print(self._board[r][0],self._board[r][1],self._board[r][2])
+            print(" "+OmitZero(self._board[r][0])+" | "+OmitZero(self._board[r][1])+" | "+OmitZero(self._board[r][2]))
+            if r < 2:
+                print("---+---+---")
