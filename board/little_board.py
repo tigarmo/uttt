@@ -34,3 +34,13 @@ class LittleBoard(object):
 
         # none of the above, so it's a tie
         return 3
+
+    def MakePlay(self, player, row, column):
+        if self._board[row][column] == 0:
+            self._board[row][column] = player
+        else:
+            print("Move not allowed")
+
+    def PrintBoard(self):
+        for r in range(3):
+            print(self._board[r][0],self._board[r][1],self._board[r][2])
